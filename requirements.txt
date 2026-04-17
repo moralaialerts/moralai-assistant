@@ -5,3 +5,5 @@ pandas
 beautifulsoup4
 requests
 playwright
+streamlit
+google-generativeai
