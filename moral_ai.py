@@ -221,6 +221,10 @@ def hunt():
     CITIES = ["Los Angeles", "Long Beach", "Glendale", "Pomona", "Torrance"]
     NICHES = ["Electrical Contractors", "Plumbing Companies", "HVAC Contractors", "General Contractors", "Roofing Companies"]
 
+    if not os.path.exists("/home/appuser/.cache/ms-playwright"):
+    os.system("playwright install chromium")
+    os.system("playwright install-deps chromium")
+    
     if os.path.exists(source_file):
         df = pd.read_csv(source_file)
     else:
