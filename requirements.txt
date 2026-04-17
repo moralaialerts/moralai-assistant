@@ -7,3 +7,4 @@ requests
 playwright
 streamlit
 google-generativeai
+google-cloud-translate
