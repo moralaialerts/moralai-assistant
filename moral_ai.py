@@ -350,23 +350,32 @@ if __name__ == "__main__":
         send()
 
 # --- NEW WEBSITE CHAT (ADD THIS AT THE VERY END) ---
-# This part handles the public chat box for your site visitors.
 st.title("🛡️ MoralAI Compliance Assistant")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# This shows the old messages on the screen
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# This handles the NEW message you just typed
 if prompt := st.chat_input("Ask about SB 294 compliance:"):
+    # 1. Show your message
+    with st.chat_message("user"):
+        st.markdown(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
-    
-    # This calls your AI without touching your hunt/send logic
-    response = ask_gemini(prompt) 
-    
+
+    # 2. Get the AI answer
+    response = ask_gemini(prompt)
+
+    # 3. Show the AI's message
+    with st.chat_message("assistant"):
+        st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
+    
+    # 4. Refresh to keep it clean
     st.rerun()
 
 st.write("""
