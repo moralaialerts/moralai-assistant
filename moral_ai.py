@@ -373,7 +373,7 @@ if prompt := st.chat_input("Ask about SB 294 compliance:"):
     # 3. Show the AI's message
     with st.chat_message("assistant"):
         st.markdown(response)
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        st.session_state.messages.append({"role": "assistant", "content": response})
     
     # 4. Refresh to keep it clean
     st.rerun()
