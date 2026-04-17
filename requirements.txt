@@ -1,0 +1,7 @@
+openai
+replicate
+gradio
+pandas
+beautifulsoup4
+requests
+playwright
