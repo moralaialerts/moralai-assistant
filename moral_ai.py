@@ -362,3 +362,11 @@ if prompt := st.chat_input("Ask about SB 294 compliance:"):
     
     st.session_state.messages.append({"role": "assistant", "content": response})
     st.rerun()
+
+st.write("""
+# My first app
+Hello *world!*
+""")
+
+df = pd.read_csv("my_data.csv")
+st.line_chart(df)
