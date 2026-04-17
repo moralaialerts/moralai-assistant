@@ -4,7 +4,7 @@ gradio
 pandas
 beautifulsoup4
 requests
-playwright
+playwright==1.42.0
 streamlit
 google-generativeai
 google-cloud-translate
