@@ -15,6 +15,8 @@ import time
 import resend
 from playwright.sync_api import sync_playwright
 
+resend.api_key = st.secrets["RESEND_API_KEY"]
+
 # TruthSeekerAI Core Engine Configuration
 # Project: MoralAI Compliance LLC
 print("🔍 Initializing TruthSeekerAI Core Engine...")
